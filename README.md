@@ -77,8 +77,8 @@ After installing the files and dependencies, go to the Allsky web interface:
 - Click **Save Modules**
 
 You should see something like this:
-![Module manager Example1](photos/)
-![Module manager Example2](photos/)
+![Module manager Example1](photos/instruction1.jpg)
+![Module manager Example2](photos/instruction2.jpg)
 ### 5. Add overlay variables (optional but recommended)
 
 To display the rain detection status on the Allsky image overlay, add the following lines to your overlay
@@ -86,7 +86,7 @@ Once enabled, check the overlay or log output to see if detection is working cor
 
 Example output on the image:
 
-![Overlay Variables Example](photos/)
+![Overlay Variables Example](photos/Overlay_example.jpg)
 
 ---
 
