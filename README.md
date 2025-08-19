@@ -1,81 +1,87 @@
 # Allsky YOLO Raindrop Detector
 
-This repository documents a dissertation project focused on **localised rainfall detection** using an Allsky camera installed at **Queen Elizabeth Olympic Park**. The project integrates a custom-trained **YOLOv8** model to identify raindrops on the camera lens, record the **start of rainfall**, and communicate the result through the Allsky web overlay.
+This repository documents a dissertation project focused on **localised rainfall detection** using an Allsky camera installed at **roof garden of UCL OPS**. The project integrates a custom-trained **YOLOv8n** model to identify raindrops on the camera lens, record the **start of rainfall**, and communicate the result through the Allsky web overlay.
 
-In addition to the detection module, this repo includes the physical **3D-printed camera enclosure**, **system deployment photos**, and a **fully reproducible module** installable in the Allsky platform.
+In addition to the detection module, this repo includes the physical **3D-printed enclosure**, **system deployment photos**, and a **fully reproducible module** installable in the Allsky platform.
 
 ---
 
 ## 📸 Project Context
 
-- **Location**: One Pool Street rooftop, Queen Elizabeth Olympic Park, London
-- **Camera**: Upward-facing fisheye lens Allsky camera
-- **Goal**: Detect the **first raindrop** hitting the lens to signal onset of local rainfall
-- **System**: Runs 24/7 on Raspberry Pi 4B, integrated with Allsky software suite
+- **Location**: One Pool Street roof garden, Queen Elizabeth Olympic Park, London
+- **Camera**: Rpi HQ
+- **Goal**: Detect the **first raindrop** landing on the lens to signal beginning of local rainfall
+- **System**: Integrated into the Allsky system and running 24/7 on a Raspberry Pi. 
 
 ---
 
-## 🧠 YOLOv8 Raindrop Detection Module
+## 🧠 YOLOv8n Raindrop Detection Module
 
-This module is triggered after every image capture in the Allsky system. It runs YOLOv8 object detection on the image, searching for lens raindrops. Once **2 detections within 3 minutes** occur, the module marks this as a rainfall event, records the first raindrop time, and enters a **cooldown period** to avoid redundant detections.
+This module is triggered after every image capture in the Allsky system. It runs YOLOv8 object detection on the image, searching for lens raindrops. Once **3 detections within 3 minutes** occur, the module marks this as a rainfall event, records the first raindrop time, and enters a **cooldown period** to avoid redundant detections.
 
 ### ✅ Output Variables for Overlay
 
-```json
-{
-  "AS_YOLORAINDETECTED": true,
-  "AS_YOLOFIRSTDROP": "18 Aug 2025, 14:32"
-}
-```
+![Allsky Example2](photos/)
+![Allsky Example2](photos/)
+![Allsky Example2](photos/)
 
 These are automatically updated and displayed on the Allsky live web UI overlay.
 
 ---
-
 ## 🛠 Installation
 
-This module is designed for Allsky version **v2023.05.01_04** or later.
+### 🛠 Installation of Allsky
 
-### 1. Clone this repository
+
+The Allsky System Installation Instructions can be found in the Allsky Team's official documentation at the following URL:
+https://htmlpreview.github.io/?https://raw.githubusercontent.com/AllskyTeam/allsky/master/html/documentation/installations/Allsky.html
+
+### 🛠 Installation of this module
+
+This module is designed for Allsky version **v2023.05.01_04** or later. There are currently two installation methods.
+A: Currently, this function module has been accepted by the Allsky Team into the official Allsky module GitHub repository and can be installed using the official installation method.
+
+B: It can also be installed manually. The instructions are as follows.
+#### Installation method for B
+##### 1. Clone this repository
 ```bash
 git clone https://github.com/yourusername/allsky-raindetector.git
+cd allsky-raindetector
 ```
 
-### 2. Copy the module to Allsky
+##### 2. Copy the module to Allsky custom module directory /opt/allsky/modules/
 ```bash
-cp allsky-raindetector/module/yolo_dis_one.py /opt/allsky/modules/
+cp allsky-raindetector/modules/allsky_raindetector.py /opt/allsky/modules/
 ```
 
-### 3. Set up Python environment
+##### 3. Set up Python environment
 ```bash
-cd /opt/allsky/modules/
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
+source ~/allsky/venv/bin/activate
+pip install -r ~/allsky-raindetector/modules/requirements.txt
 ```
 
-> Ensure `ultralytics`, `opencv-python`, and `allsky_shared` are installed in the venv.
+> Ensure `nncn`, `pillow`, and `request` are installed in the allsky venv.
 
-### 4. Add the module in Allsky config
+##### 4. Enable the module in Allsky Web UI
 
-Edit your `config.json` to include this under `"modules"`:
+After installing the files and dependencies, go to the Allsky web interface:
 
-```json
-{
-  "module": "raindetector",
-  "enabled": true,
-  "events": ["day", "night"],
-  "model_path": "/home/hanmc/yolo/weights/best.pt"
-}
-```
+- Navigate to **Module Manager**
+- Drag **YOLO Rain Detector** from the “Available Modules” panel (left) to the “Selected Modules” panel (right)
+- Click the **checkbox to enable it**
+- Click **Save Modules**
 
-### 5. Restart Allsky and check logs
-```bash
-sudo systemctl restart allsky
-tail -f /var/log/allsky.log
-```
+You should see something like this:
+![Module manager Example1](photos/)
+![Module manager Example2](photos/)
+### 5. Add overlay variables (optional but recommended)
 
+To display the rain detection status on the Allsky image overlay, add the following lines to your overlay
 Once enabled, check the overlay or log output to see if detection is working correctly.
+
+Example output on the image:
+
+![Overlay Variables Example](photos/)
 
 ---
 
@@ -83,41 +89,22 @@ Once enabled, check the overlay or log output to see if detection is working cor
 
 ```
 📦 allsky-raindetector/
-├── README.md                 ← This file
-├── images/                   ← Photos of device and output samples
-│   ├── camera_setup.jpg
-│   ├── deployment_site.jpg
-│   └── sample_detection.jpg
+├── README.md
+├── images/                   ← Photos
 ├── 3d-models/                ← 3D printable enclosure designs
-│   └── enclosure_v1.stl
-├── module/                   ← Allsky module files
-│   ├── yolo_dis_one.py       ← Main detection script
-│   ├── requirements.txt      ← Dependencies (e.g. ultralytics, opencv-python)
-│   └── config_example.json   ← Example config snippet
+│   └── .STL files
+├── modules/                   ← Allsky module files
+    └── allsky_raindetector
+│       ├── allsky_raindetector.py  ← Main detection script
+│       ├── requirements.txt        ← Dependencies
+│       └── README.md               ← Module introduction
 ```
-
----
-
-## 👨‍🔧 Author & Contact
-
-Developed by **hanmc** for UCL CASA0022 Dissertation Module.
-
-- 📧 Email: [your.email@example.com]
-- 🔗 GitHub: [https://github.com/yourusername]
-
----
-
-## 📌 Notes
-
-- This module assumes a trained YOLOv8 model (`.pt`) already exists.
-- Model should be trained on your own annotated lens raindrop dataset.
-- Recommended image size during training: 1440×1080 (to match Allsky output).
 
 ---
 
 ## 📷 Image Samples
 
-> Available under `images/` folder. Includes system setup and detection result visuals.
+> Available under `photos/` folder. Includes system setup and detection result visuals.
 
 ---
 
