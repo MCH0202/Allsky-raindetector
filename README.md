@@ -21,9 +21,14 @@ This module is triggered after every image capture in the Allsky system. It runs
 
 ### ✅ Output Variables for Overlay
 
-![Allsky Example2](photos/)
-![Allsky Example2](photos/)
-![Allsky Example2](photos/)
+```json
+{
+  "AS_YOLORAINDETECTED": True,
+  "AS_YOLOFIRSTDROP": "01 Aug 2025, 16:08"
+}
+```
+
+![Allsky Example2](photos/confirm_raining.jpg)
 
 These are automatically updated and displayed on the Allsky live web UI overlay.
 
@@ -105,7 +110,9 @@ Example output on the image:
 ## 📷 Image Samples
 
 > Available under `photos/` folder. Includes system setup and detection result visuals.
-
+![Allsky Example2](photos/No rain.jpg)
+![Allsky Example2](photos/first detection.jpg)
+![Allsky Example2](photos/confirm raining.jpg)
 ---
 
 ## 📦 3D Enclosure
