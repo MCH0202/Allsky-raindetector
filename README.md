@@ -113,7 +113,3 @@ Example output on the image:
 > The 3D-printable STL files are included in `3d-models/`. Designed with Fusion 360, printed in **PLA**. Includes semi-open dome for lens exposure to raindrops.
 
 ---
-
-## 📄 License
-
-MIT License
