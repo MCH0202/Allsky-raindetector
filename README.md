@@ -43,7 +43,8 @@ https://htmlpreview.github.io/?https://raw.githubusercontent.com/AllskyTeam/alls
 
 ### 🛠 Installation of this module
 
-This module is designed for Allsky version **v2023.05.01_04** or later. There are currently two installation methods.
+This module is designed for Allsky version **v2023.05.01_04** or later. There are currently two installation methods
+
 A: Currently, this function module has been accepted by the Allsky Team into the official Allsky module GitHub repository and can be installed using the official installation method.
 
 B: It can also be installed manually. The instructions are as follows.
