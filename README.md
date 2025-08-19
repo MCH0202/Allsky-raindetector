@@ -1,4 +1,4 @@
-# Allsky YOLO Raindrop Detector
+# Allsky YOLO Rain Detector
 
 This repository documents a dissertation project focused on **localised rainfall detection** using an Allsky camera installed at **roof garden of UCL OPS**. The project integrates a custom-trained **YOLOv8n** model to identify raindrops on the camera lens, record the **start of rainfall**, and communicate the result through the Allsky web overlay.
 
