@@ -104,19 +104,25 @@ Example output on the image:
 │       ├── requirements.txt        ← Dependencies
 │       └── README.md               ← Module introduction
 ```
+---
+
+## 📦 3D Enclosure
+
+> The 3D-printable STL files are included in `3d-models/`. Designed with Fusion 360, printed in **PLA**. Includes semi-open dome for lens exposure to raindrops.
+> The deployment position, and some picture of enclosure in Fusion software and in reality are showed
+![Allsky Enclosure](photos/installing_point.jpg)
+![Allsky Enclosure](photos/deployed_device.jpg)
+![Allsky Enclosure](photos/Actual_device cross-sectional diagram1.jpg)
+![Allsky Enclosure](photos/The_entire_appearance_of_the_equipment.jpg)
+
+
 
 ---
 
 ## 📷 Image Samples
 
 > Available under `photos/` folder. Includes system setup and detection result visuals.
-![Allsky Example2](photos/No rain.jpg)
-![Allsky Example2](photos/first detection.jpg)
-![Allsky Example2](photos/confirm raining.jpg)
----
-
-## 📦 3D Enclosure
-
-> The 3D-printable STL files are included in `3d-models/`. Designed with Fusion 360, printed in **PLA**. Includes semi-open dome for lens exposure to raindrops.
-
+![Allsky Example2](photos/No_rain.jpg)
+![Allsky Example2](photos/first_detection.jpg)
+![Allsky Example2](photos/confirm_raining.jpg)
 ---
