@@ -79,6 +79,7 @@ After installing the files and dependencies, go to the Allsky web interface:
 
 You should see something like this:
 ![Module manager Example1](photos/instruction1.jpg)
+
 ![Module manager Example2](photos/instruction2.jpg)
 ### 5. Add overlay variables (optional but recommended)
 
@@ -113,7 +114,7 @@ Example output on the image:
 > The deployment position, and some picture of enclosure in Fusion software and in reality are showed
 ![Allsky Enclosure](photos/installing_point.jpg)
 ![Allsky Enclosure](photos/deployed_device.jpg)
-![Allsky Enclosure](photos/Actual_device cross-sectional diagram1.jpg)
+![Allsky Enclosure](photos/Actual_device_cross-sectional_diagram1.jpg)
 ![Allsky Enclosure](photos/The_entire_appearance_of_the_equipment.jpg)
 
 
