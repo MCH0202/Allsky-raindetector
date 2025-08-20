@@ -2,7 +2,7 @@
 
 This repository documents a dissertation project focused on **localised rainfall detection** using an Allsky camera installed at **roof garden of UCL OPS**. The project integrates a custom-trained **YOLOv8n** model to identify raindrops on the camera lens, record the **start of rainfall**, and communicate the result through the Allsky web overlay.
 
-In addition to the detection module, this repo includes the physical **3D-printed enclosure**, **system deployment photos**, and a **fully reproducible module** installable in the Allsky platform.
+In addition to the detection module, this repo includes the physical **3D-printed enclosure**, **YOLO model in both ultralytics and ncnn format**, and a **fully raindetection module** installable in the Allsky platform.
 
 ---
 
@@ -10,6 +10,7 @@ In addition to the detection module, this repo includes the physical **3D-printe
 
 - **Location**: One Pool Street roof garden, Queen Elizabeth Olympic Park, London
 - **Camera**: Rpi HQ
+- **Platform** Raspberry Pi 4B
 - **Goal**: Detect the **first raindrop** landing on the lens to signal beginning of local rainfall
 - **System**: Integrated into the Allsky system and running 24/7 on a Raspberry Pi. 
 
