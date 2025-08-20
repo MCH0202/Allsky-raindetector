@@ -51,13 +51,13 @@ B: It can also be installed manually. The instructions are as follows.
 #### Installation method for B
 ##### 1. Clone this repository
 ```bash
-git clone https://github.com/yourusername/allsky-raindetector.git
+git clone https://github.com/MCH0202/Allsky-raindetector.git
 cd allsky-raindetector
 ```
 
 ##### 2. Copy the module to Allsky custom module directory /opt/allsky/modules/
 ```bash
-cp allsky-raindetector/modules/allsky_raindetector.py /opt/allsky/modules/
+cp allsky-raindetector/modules/allsky_raindetector/allsky_raindetector.py /opt/allsky/modules/
 ```
 
 ##### 3. Set up Python environment
