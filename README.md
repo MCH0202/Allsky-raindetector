@@ -95,7 +95,7 @@ Example output on the image:
 ## 📁 Repository Structure
 
 ```
-📦 allsky-raindetector/
+allsky-raindetector/
 ├── README.md
 ├── images/                   ← Photos
 ├── 3d-models/                ← 3D printable enclosure designs
