@@ -63,7 +63,7 @@ cp allsky-raindetector/modules/allsky_raindetector/allsky_raindetector.py /opt/a
 ##### 3. Set up Python environment
 ```bash
 source ~/allsky/venv/bin/activate
-pip install -r ~/allsky-raindetector/modules/requirements.txt
+pip install -r ~/allsky-raindetector/modules/allsky_raindetector/requirements.txt
 ```
 
 > Ensure `nncn`, `pillow`, and `request` are installed in the allsky venv.
