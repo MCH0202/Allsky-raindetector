@@ -125,6 +125,7 @@ allsky-raindetector/
 ## 📷 Image Samples
 
 > Available under `photos/` folder. Includes system setup and detection result visuals.
+> https://raindropcam.co.uk/allsky/
 ![Allsky Example2](photos/No_rain.jpg)
 ![Allsky Example2](photos/first_detection.jpg)
 ![Allsky Example2](photos/confirm_raining.jpg)
